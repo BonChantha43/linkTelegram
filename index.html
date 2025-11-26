@@ -2,60 +2,70 @@
 <html lang="km">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Telegram Data Entry</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
-    <div class="main-wrapper">
+    <div class="container">
         <div class="card">
-            <div class="header">
-                <i class="fab fa-telegram-plane logo-icon"></i>
-                <h2>បញ្ចូល Telegram</h2>
-                <p>ប្រព័ន្ធគ្រប់គ្រងទិន្នន័យឆ្លាតវៃ</p>
+            
+            <div class="header-section">
+                <div class="icon-bg">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
+                <h2>បញ្ចូលគណនី</h2>
+                <p>ប្រព័ន្ធគ្រប់គ្រងទិន្នន័យបុគ្គលិក</p>
             </div>
 
-            <form id="entryForm">
-                <div class="form-group">
+            <form id="entryForm" autocomplete="off">
+                
+                <div class="input-group">
                     <label>ឈ្មោះបុគ្គលិក</label>
-                    <div class="input-icon">
-                        <i class="fas fa-user"></i>
-                        <input type="text" id="nameInput" list="nameList" placeholder="វាយឈ្មោះដើម្បីស្វែងរក..." autocomplete="off">
-                        <datalist id="nameList"></datalist>
+                    <div class="input-wrapper">
+                        <i class="fas fa-search input-icon"></i>
+                        <input type="text" id="nameInput" placeholder="វាយឈ្មោះស្វែងរក..." autocomplete="off">
+                        <ul id="suggestions" class="suggestions-list"></ul>
                     </div>
-                    <small id="statusText"></small>
+                    <div id="statusMsg" class="status-badge"></div>
                 </div>
 
-                <div class="form-group">
-                    <label>ភេទ</label>
-                    <div class="input-icon">
-                        <i class="fas fa-venus-mars"></i>
-                        <input type="text" id="genderInput" placeholder="Auto" readonly>
+                <div class="row">
+                    <div class="input-group half-width">
+                        <label>ភេទ</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-venus-mars input-icon"></i>
+                            <input type="text" id="genderInput" placeholder="Auto" readonly>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Telegram Link</label>
-                    <div class="input-icon">
-                        <i class="fas fa-link"></i>
+                <div class="input-group">
+                    <label>Link Telegram</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-link input-icon"></i>
                         <input type="url" id="linkInput" placeholder="https://t.me/username" disabled>
                     </div>
                 </div>
 
                 <button type="submit" id="submitBtn" disabled>
-                    <i class="fas fa-save"></i> រក្សាទុកទិន្នន័យ
+                    <span>រក្សាទុកទិន្នន័យ</span>
+                    <i class="fas fa-arrow-right"></i>
                 </button>
             </form>
-            
-            <div id="loader" class="loader">
+
+            <div id="loader" class="loader-overlay">
                 <div class="spinner"></div>
-                <p>កំពុងភ្ជាប់ទិន្នន័យ...</p>
+                <span>កំពុងដំណើរការ...</span>
             </div>
+
         </div>
+        
+        <div class="footer-credit">Developed with ❤️</div>
     </div>
 
     <script src="script.js"></script>
