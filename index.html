@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Data Entry</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="card">
+            <div class="header">
+                <i class="fab fa-telegram-plane logo-icon"></i>
+                <h2>បញ្ចូល Telegram</h2>
+                <p>ប្រព័ន្ធគ្រប់គ្រងទិន្នន័យឆ្លាតវៃ</p>
+            </div>
+
+            <form id="entryForm">
+                <div class="form-group">
+                    <label>ឈ្មោះបុគ្គលិក</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="nameInput" list="nameList" placeholder="វាយឈ្មោះដើម្បីស្វែងរក..." autocomplete="off">
+                        <datalist id="nameList"></datalist>
+                    </div>
+                    <small id="statusText"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>ភេទ</label>
+                    <div class="input-icon">
+                        <i class="fas fa-venus-mars"></i>
+                        <input type="text" id="genderInput" placeholder="Auto" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Telegram Link</label>
+                    <div class="input-icon">
+                        <i class="fas fa-link"></i>
+                        <input type="url" id="linkInput" placeholder="https://t.me/username" disabled>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" disabled>
+                    <i class="fas fa-save"></i> រក្សាទុកទិន្នន័យ
+                </button>
+            </form>
+            
+            <div id="loader" class="loader">
+                <div class="spinner"></div>
+                <p>កំពុងភ្ជាប់ទិន្នន័យ...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
